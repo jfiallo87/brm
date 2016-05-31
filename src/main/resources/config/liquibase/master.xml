@@ -5,6 +5,25 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160530172250_added_entity_EventCatalog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160530172532_added_entity_FacilityCatalog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160530172709_added_entity_ServiceCatalog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160530172840_added_entity_SeatingCatalog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160530174153_added_entity_FacilityEventCatalog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160531094613_added_entity_FacilityEventSeatingCatalog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160531100440_added_entity_FacilityEventServiceCatalog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160531101941_added_entity_Customer.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160531102643_added_entity_FacilityEventReservation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160531103125_added_entity_FacilityEventServiceReservation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160531111313_added_entity_FacilitySchedule.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160531111746_added_entity_FacilityEventSchedule.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20160530174153_added_entity_constraints_FacilityEventCatalog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160531094613_added_entity_constraints_FacilityEventSeatingCatalog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160531100440_added_entity_constraints_FacilityEventServiceCatalog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160531102643_added_entity_constraints_FacilityEventReservation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160531103125_added_entity_constraints_FacilityEventServiceReservation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160531111313_added_entity_constraints_FacilitySchedule.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160531111746_added_entity_constraints_FacilityEventSchedule.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

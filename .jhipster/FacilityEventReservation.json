@@ -1,0 +1,58 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "customer",
+            "otherEntityName": "customer",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipName": "facilityEventServiceReservation",
+            "otherEntityName": "facilityEventServiceReservation",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "facilityEventReservation"
+        },
+        {
+            "relationshipName": "facilityEventSeatingCatalog",
+            "otherEntityName": "facilityEventSeatingCatalog",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "start",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "end",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "guests",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": "1"
+        }
+    ],
+    "changelogDate": "20160531102643",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "facility_event_reservation",
+    "pagination": "infinite-scroll"
+}

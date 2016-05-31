@@ -1,0 +1,44 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "seatingCatalog",
+            "otherEntityName": "seatingCatalog",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipName": "facilityEventCatalog",
+            "otherEntityName": "facilityEventCatalog",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "facilityEventReservation",
+            "otherEntityName": "facilityEventReservation",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "facilityEventSeatingCatalog"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "unitPrice",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": "0"
+        }
+    ],
+    "changelogDate": "20160531094613",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "facility_event_seating_catalog",
+    "pagination": "infinite-scroll"
+}
