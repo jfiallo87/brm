@@ -1,0 +1,64 @@
+<div>
+    <h2>Facility Event Schedules</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="facility-event-schedule.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Facility Event Schedule
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span>Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="start"><span>Start</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="end"><span>End</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="facilityEventCatalog.id"><span>Facility Event Catalog</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="facilityEventSchedule in vm.facilityEventSchedules track by facilityEventSchedule.id">
+                    <td><a ui-sref="facility-event-schedule-detail({id:facilityEventSchedule.id})">{{facilityEventSchedule.id}}</a></td>
+                    <td>{{facilityEventSchedule.description}}</td>
+                    <td>{{facilityEventSchedule.start | date:'medium'}}</td>
+                    <td>{{facilityEventSchedule.end | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="facility-event-catalog-detail({id:facilityEventSchedule.facilityEventCatalog.id})">{{facilityEventSchedule.facilityEventCatalog.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="facility-event-schedule-detail({id:facilityEventSchedule.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="facility-event-schedule.edit({id:facilityEventSchedule.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="facility-event-schedule.delete({id:facilityEventSchedule.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

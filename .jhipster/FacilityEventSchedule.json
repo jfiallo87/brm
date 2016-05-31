@@ -1,0 +1,42 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "facilityEventCatalog",
+            "otherEntityName": "facilityEventCatalog",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "1000"
+        },
+        {
+            "fieldName": "start",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "end",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160531111746",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "facility_event_schedule",
+    "pagination": "infinite-scroll"
+}

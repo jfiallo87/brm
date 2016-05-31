@@ -1,0 +1,34 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "facilityEventSeatingCatalog",
+            "otherEntityName": "facilityEventSeatingCatalog",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "seatingCatalog"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "1000"
+        }
+    ],
+    "changelogDate": "20160530172840",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "seating_catalog",
+    "pagination": "infinite-scroll"
+}

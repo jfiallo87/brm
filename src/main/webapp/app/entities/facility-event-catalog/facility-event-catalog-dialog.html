@@ -1,0 +1,70 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFacilityEventCatalogLabel">Create or edit a Facility Event Catalog</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.facilityEventCatalog.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.facilityEventCatalog.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_minGuests">Min Guests</label>
+            <input type="number" class="form-control" name="minGuests" id="field_minGuests"
+                    ng-model="vm.facilityEventCatalog.minGuests"
+                    required min="1" />
+            <div ng-show="editForm.minGuests.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.minGuests.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.minGuests.$error.min" translate-value-min="1">
+                    This field should be more than 1.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.minGuests.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_facilityCatalog">Facility Catalog</label>
+            <select class="form-control" id="field_facilityCatalog" name="facilityCatalog" ng-model="vm.facilityEventCatalog.facilityCatalog" ng-options="facilityCatalog as facilityCatalog.name for facilityCatalog in vm.facilitycatalogs track by facilityCatalog.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.facilityCatalog.$invalid">
+            <p class="help-block"
+                ng-show="editForm.facilityCatalog.$error.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="field_eventCatalog">Event Catalog</label>
+            <select class="form-control" id="field_eventCatalog" name="eventCatalog" ng-model="vm.facilityEventCatalog.eventCatalog" ng-options="eventCatalog as eventCatalog.name for eventCatalog in vm.eventcatalogs track by eventCatalog.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.eventCatalog.$invalid">
+            <p class="help-block"
+                ng-show="editForm.eventCatalog.$error.required">
+                This field is required.
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,22 @@
+
+<div>
+    <h2><span>Facility Event Service Reservation</span> {{vm.facilityEventServiceReservation.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Facility Event Reservation</span></dt>
+        <dd>
+            <a ui-sref="facility-event-reservation-detail({id:vm.facilityEventServiceReservation.facilityEventReservation.id})">{{vm.facilityEventServiceReservation.facilityEventReservation.start}}</a>
+        </dd>
+        <dt><span>Facility Event Service Catalog</span></dt>
+        <dd>
+            <a ui-sref="facility-event-service-catalog-detail({id:vm.facilityEventServiceReservation.facilityEventServiceCatalog.id})">{{vm.facilityEventServiceReservation.facilityEventServiceCatalog.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

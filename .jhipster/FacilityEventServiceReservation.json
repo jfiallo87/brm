@@ -1,0 +1,28 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "facilityEventReservation",
+            "otherEntityName": "facilityEventReservation",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "start"
+        },
+        {
+            "relationshipName": "facilityEventServiceCatalog",
+            "otherEntityName": "facilityEventServiceCatalog",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20160531103125",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "facility_event_service_reservation",
+    "pagination": "infinite-scroll"
+}

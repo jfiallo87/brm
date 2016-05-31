@@ -1,0 +1,56 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "facilityCatalog",
+            "otherEntityName": "facilityCatalog",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipName": "eventCatalog",
+            "otherEntityName": "eventCatalog",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipName": "facilityEventSeatingCatalog",
+            "otherEntityName": "facilityEventSeatingCatalog",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "facilityEventCatalog"
+        },
+        {
+            "relationshipName": "facilityEventServiceCatalog",
+            "otherEntityName": "facilityEventServiceCatalog",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "facilityEventCatalog"
+        },
+        {
+            "relationshipName": "facilityEventSchedule",
+            "otherEntityName": "facilityEventSchedule",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "facilityEventCatalog"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "minGuests",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": "1"
+        }
+    ],
+    "changelogDate": "20160530174153",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "facility_event_catalog",
+    "pagination": "infinite-scroll"
+}

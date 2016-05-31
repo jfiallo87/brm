@@ -1,0 +1,30 @@
+
+<div>
+    <h2><span>Facility Event Schedule</span> {{vm.facilityEventSchedule.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Description</span></dt>
+        <dd>
+            <span>{{vm.facilityEventSchedule.description}}</span>
+        </dd>
+        <dt><span>Start</span></dt>
+        <dd>
+            <span>{{vm.facilityEventSchedule.start | date:'medium'}}</span>
+        </dd>
+        <dt><span>End</span></dt>
+        <dd>
+            <span>{{vm.facilityEventSchedule.end | date:'medium'}}</span>
+        </dd>
+        <dt><span>Facility Event Catalog</span></dt>
+        <dd>
+            <a ui-sref="facility-event-catalog-detail({id:vm.facilityEventSchedule.facilityEventCatalog.id})">{{vm.facilityEventSchedule.facilityEventCatalog.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

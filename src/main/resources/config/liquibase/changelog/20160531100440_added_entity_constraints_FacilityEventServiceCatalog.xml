@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity FacilityEventServiceCatalog.
+    -->
+    <changeSet id="20160531100440-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="service_catalog_id"
+                                 baseTableName="facility_event_service_catalog"
+                                 constraintName="fk_facilityeventservicecatalog_servicecatalog_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service_catalog"/>
+
+        <addForeignKeyConstraint baseColumnNames="facility_event_catalog_id"
+                                 baseTableName="facility_event_service_catalog"
+                                 constraintName="fk_facilityeventservicecatalog_facilityeventcatalog_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="facility_event_catalog"/>
+
+    </changeSet>
+</databaseChangeLog>

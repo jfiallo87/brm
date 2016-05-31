@@ -1,0 +1,52 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "serviceCatalog",
+            "otherEntityName": "serviceCatalog",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipName": "facilityEventCatalog",
+            "otherEntityName": "facilityEventCatalog",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "facilityEventServiceReservation",
+            "otherEntityName": "facilityEventServiceReservation",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "facilityEventServiceCatalog"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "unitPrice",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "unitType",
+            "fieldType": "UnitType",
+            "fieldValues": "EACH,FLAT",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160531100440",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "facility_event_service_catalog",
+    "pagination": "infinite-scroll"
+}

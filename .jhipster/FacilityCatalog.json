@@ -1,0 +1,49 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "facilityEventCatalog",
+            "otherEntityName": "facilityEventCatalog",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "facilityCatalog"
+        },
+        {
+            "relationshipName": "facilitySchedule",
+            "otherEntityName": "facilitySchedule",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "facilityCatalog"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "1000"
+        },
+        {
+            "fieldName": "maxCapacity",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": "1"
+        }
+    ],
+    "changelogDate": "20160530172532",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "facility_catalog",
+    "pagination": "infinite-scroll"
+}

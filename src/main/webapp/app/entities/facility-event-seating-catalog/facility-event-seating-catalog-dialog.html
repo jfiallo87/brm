@@ -1,0 +1,70 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFacilityEventSeatingCatalogLabel">Create or edit a Facility Event Seating Catalog</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.facilityEventSeatingCatalog.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.facilityEventSeatingCatalog.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_unitPrice">Unit Price</label>
+            <input type="number" class="form-control" name="unitPrice" id="field_unitPrice"
+                    ng-model="vm.facilityEventSeatingCatalog.unitPrice"
+                    required min="0" />
+            <div ng-show="editForm.unitPrice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.unitPrice.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.unitPrice.$error.min" translate-value-min="0">
+                    This field should be more than 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.unitPrice.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_seatingCatalog">Seating Catalog</label>
+            <select class="form-control" id="field_seatingCatalog" name="seatingCatalog" ng-model="vm.facilityEventSeatingCatalog.seatingCatalog" ng-options="seatingCatalog as seatingCatalog.name for seatingCatalog in vm.seatingcatalogs track by seatingCatalog.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.seatingCatalog.$invalid">
+            <p class="help-block"
+                ng-show="editForm.seatingCatalog.$error.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="field_facilityEventCatalog">Facility Event Catalog</label>
+            <select class="form-control" id="field_facilityEventCatalog" name="facilityEventCatalog" ng-model="vm.facilityEventSeatingCatalog.facilityEventCatalog" ng-options="facilityEventCatalog as facilityEventCatalog.id for facilityEventCatalog in vm.facilityeventcatalogs track by facilityEventCatalog.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.facilityEventCatalog.$invalid">
+            <p class="help-block"
+                ng-show="editForm.facilityEventCatalog.$error.required">
+                This field is required.
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
